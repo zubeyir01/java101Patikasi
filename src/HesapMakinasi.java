@@ -22,7 +22,11 @@ public class HesapMakinasi {
                 System.out.println("Sonuc:" + (n1 * n2));
                 break;
             case 4:
-                System.out.println("Sonuc:" + (n1 / n2));
+                if ( n2 != 0){
+                    System.out.println("Sonuc:" + (n1 / n2));
+                }else{
+                    System.out.println("Bir sayi 0'a bolunemez!");
+                }
                 break;
             default:
                 System.out.println("Dogru secim yapmadiniz!");
