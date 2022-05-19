@@ -4,6 +4,7 @@ public class SinifGecme {
     public static void main(String[] args) {
         int mat,fizik,kimya,turkce,muzik,toplam = 0;
         double avarage;
+        int count = 0;
         Scanner input = new Scanner(System.in);
 
         try {
@@ -13,6 +14,7 @@ public class SinifGecme {
                 System.out.println("Matematik dersi ortalamaya dahil edilmedi.");
             }else {
                 toplam += mat;
+                count++;
             }
             System.out.print("Fizik notunuzu giriniz:");
             fizik = input.nextInt();
@@ -20,6 +22,7 @@ public class SinifGecme {
                 System.out.println("Fizik dersi ortalamaya dahil edilmedi.");
             }else {
                 toplam += fizik;
+                count++;
             }
             System.out.print("Kimya notunuzu giriniz:");
             kimya = input.nextInt();
@@ -27,6 +30,7 @@ public class SinifGecme {
                 System.out.println("Kimya dersi ortalamaya dahil edilmedi.");
             }else {
                 toplam += kimya;
+                count++;
             }
             System.out.print("Turkce notunuzu giriniz:");
             turkce = input.nextInt();
@@ -34,6 +38,7 @@ public class SinifGecme {
                 System.out.println("Turkce dersi ortalamaya dahil edilmedi.");
             }else {
                 toplam += turkce;
+                count++;
             }
             System.out.print("Muzik notunuzu giriniz:");
             muzik = input.nextInt();
@@ -41,8 +46,9 @@ public class SinifGecme {
                 System.out.println("Muzik dersi ortalamaya dahil edilmedi.");
             }else {
                 toplam += muzik;
+                count++;
             }
-            avarage = toplam / 5;
+            avarage = toplam / count;
             if( avarage < 55 ){
                 System.out.println("Sinifta kaldıniz, seneye tekrar gorusmek uzere...");
             }else {
