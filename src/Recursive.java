@@ -33,12 +33,35 @@ public class Recursive {
         return x * Factoriel(x - 1);
     }
 
+    static boolean isPrime(int n) {
+        if (n <= 1)
+            return false;
+        else if (n == 2)
+            return true;
+
+        else if (n % 2 == 0)
+            return false;
+
+        for (int i = 3; i <= Math.sqrt(n); i += 2) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
         System.out.print("Bir sayi gir:");
         int x = input.nextInt();
         System.out.print("1'den " + x + "'e kadar olan sayilarin toplami:" + sum(x));
         System.out.println("\n" + x + ". Fibonacci sayisi:" + Fibonacci(x));
+
+        if (isPrime(x))
+            System.out.println(x + " bir Asal sayidir.");
+        else
+            System.out.println(x + " bir Asal sayi degildir.");
+
         System.out.print("Taban degeri giriniz:");
         int taban = input.nextInt();
         System.out.print("Us degeri giriniz:");
