@@ -49,6 +49,24 @@ public class Recursive {
         return true;
     }
 
+    static int negative(int x) {
+        if (x <= 0) {
+            return x;
+        } else {
+            System.out.print(x + " "); // 5 n(0) 0 5
+            return negative(x - 5);
+        }
+    }
+
+    static int positive(int x, int y) {
+        if (x == y) {
+            return x;
+        } else {
+            System.out.print(x + " ");
+            return positive(x + 5, y);
+        }
+
+    }
 
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
@@ -61,6 +79,8 @@ public class Recursive {
             System.out.println(x + " bir Asal sayidir.");
         else
             System.out.println(x + " bir Asal sayi degildir.");
+        System.out.println("-------Desen olusturma------");
+        System.out.println(positive(negative(x), x));
 
         System.out.print("Taban degeri giriniz:");
         int taban = input.nextInt();
